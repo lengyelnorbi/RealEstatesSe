@@ -1,0 +1,43 @@
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Add new advertisment</h1>
+        <form [formGroup]="advertismentForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label for="title">Title: </mat-label>
+                <input matInput type="text" formControlName="title" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="price">Price: </mat-label>
+                <input matInput type="number" formControlName="price" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="valuta">Valuta: </mat-label>
+                <input matInput type="text" formControlName="valuta" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="size">Size: </mat-label>
+                <input matInput type="text" formControlName="size" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="location">Location: </mat-label>
+                <input matInput type="text" formControlName="location" required/>
+            </mat-form-field>
+            <div formGroupName="contacts" class="subForm" style="padding: 0;">
+                <mat-form-field>
+                    <mat-label for="email">Email: </mat-label>
+                    <input matInput type="email" formControlName="email" required/>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="phonenumber">Phone number: </mat-label>
+                    <input matInput type="tel" formControlName="phonenumber" required/>
+                </mat-form-field>
+            </div>
+            <app-upload-images></app-upload-images>
+            <div>
+                <span class="buttons">
+                    <button mat-raised-button color="primary" type="submit">Advertise</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
