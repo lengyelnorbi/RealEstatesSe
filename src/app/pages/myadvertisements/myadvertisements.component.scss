@@ -36,3 +36,12 @@ mat-paginator{
     justify-content: space-around;
     width: 100%;
 }
+
+@media screen and (max-width: 550px) {
+    mat-card{
+        width: 390px;
+    }
+    img{
+        width: 300px;
+    }
+}
