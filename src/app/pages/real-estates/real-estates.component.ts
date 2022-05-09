@@ -24,9 +24,11 @@ export class RealEstatesComponent implements OnInit, OnChanges, OnDestroy {
     this.subscription1 = this.advertiseService.findAll().subscribe(advertisements => {
       this.advertisements = advertisements;
       for(let i = 0; i < this.advertisements.length; i++){
-        this.subscription4 = this.advertiseService.loadImage(this.advertisements[i].index_image).subscribe(data => {
-          this.advertisements[i].index_image = data;
-        })
+        if(this.advertisements[i].index_image.startsWith("Images")){
+          this.subscription4 = this.advertiseService.loadImage(this.advertisements[i].index_image).subscribe(data => {
+            this.advertisements[i].index_image = data;
+          })
+        }
       }
     })
   }
@@ -36,9 +38,11 @@ export class RealEstatesComponent implements OnInit, OnChanges, OnDestroy {
       this.advertisements = advertisements;
       this.pageSlice = this.advertisements.slice(0, 8);
       for(let i = 0; i < this.advertisements.length; i++){
-        this.subscription3 = this.advertiseService.loadImage(this.advertisements[i].index_image).subscribe(data => {
-          this.advertisements[i].index_image = data;
-        })
+        if(this.advertisements[i].index_image.startsWith("Images")){
+          this.subscription3 = this.advertiseService.loadImage(this.advertisements[i].index_image).subscribe(data => {
+            this.advertisements[i].index_image = data;
+          })
+        }
       }
     })
   }
